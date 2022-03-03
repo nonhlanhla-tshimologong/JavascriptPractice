@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="forinsample();">for/in sample</button>
+    <button onclick="breakSample();">Break</button>"
+
+    <script>
+        'use script';
+
+        function forinsample()
+        {
+            let product = {
+                "productID": 680,
+                "name": "frame",
+                "productNumber": "FR-R92B-57",
+                "color": "Black",
+                "standardCost": 1050,
+                "listPrice": 14331,
+                calculateGrossProfit: function(){
+                    return this.listPrice - this.standardCost;
+                }
+            };
+            for(const key in product)
+            {
+                console.log("'" + key + "'=" + product[key]);
+            }
+        }
+
+        //break and cotinue
+        let _product = [{"productID": 680,
+                "name": "frame",
+                "productNumber": "FR-R92B-57",
+                "color": "Black",
+                "standardCost": 1050,
+                "listPrice": 14331},
+                {
+                "productID": 526,
+                "name": "frame",
+                "productNumber": "FR-R92B-57",
+                "color": "Black",
+                "standardCost": 6987,
+                "listPrice": 1589,
+                },
+                {
+                "productID": 680,
+                "name": "frame",
+                "productNumber": "FR-R92B-57",
+                "color": "Black",
+                "standardCost": 1050,
+                "listPrice": 14331,
+                }
+               ];
+
+               function breakSample()
+               {
+                   for(const item of _product)
+                   {
+                       if(item.standardCost < 20)
+                       {
+                           break;
+                       }
+                       console.log(JSON.stringify(item));
+                   }
+               }
+    </script>
+</body>
+</html>
